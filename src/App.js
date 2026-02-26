@@ -1,6 +1,8 @@
 import './App.css';
 import Header from './components/Navbar';
 import Footer from './components/Footer';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import icon1 from './asset/icons/icon-medkit.png'
 import icon2 from './asset/icons/icon-personal.png'
 import icon3 from './asset/icons/icon-document.png'
@@ -19,7 +21,6 @@ import phoneImg1 from './asset/phone/phone.png'
 import phoneContent from './asset/phone/phone-content.png'
 import phoneBangs from './asset/phone/phone-bangs.png'
 import phoneAitContent from './asset/phone/phone-air-content.png'
-import { useEffect } from 'react';
 import phoneAirQr from './asset/phone/phone-air-qr.png';
 import messageChatIcon from './asset/icons/message-chat-square.png'
 import pieChartIcon from './asset/icons/icon-pie-chart.png'
@@ -29,6 +30,8 @@ import phoneIcon from './asset/icons/icon-phone-reg.png'
 import logo from './asset/logo.svg'
 
 function App() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -57,12 +60,18 @@ function App() {
       <section className="hero">
         <div className="hero-container">
           <div className="hero-content">
-            <div className="hero-left">
-              <h1>Технологичный Подход<br />К Вашей Аптечке</h1>
-              <p>Ваш помощник, который упрощает контроль<br />и организацию медицинских запасов.</p>
-              <br/>
-              <button className="btn-primary">Зарегистрироваться</button>
-            </div>
+          <div className="hero-left">
+            <h1>Технологичный Подход<br />К Вашей Аптечке</h1>
+            <p>Ваш помощник, который упрощает контроль<br />и организацию медицинских запасов.</p>
+            <br/>
+            <button 
+              className="btn-primary" 
+              type="button" 
+              onClick={() => navigate('/register')}
+            >
+              Зарегистрироваться
+            </button>
+          </div>
             <div className="hero-right">
               <div className="phone-container">
                 <img src={phoneImg1} alt="Phone App" className="hero-phone" />
@@ -195,7 +204,10 @@ function App() {
             <div className="benefits-left">
               <h3>Организация аптечки -<br />Ваше здоровье</h3>
               <p>Мы предлагаем удобный в организации и в<br />использовании сервис, который будет всегда у вас<br />под рукой в минуту надобности</p>
-              <button className="btn-primary">Начать использовать</button>
+              {/* Если нужно, здесь тоже можно добавить переход на логин */}
+              <button className="btn-primary" onClick={() => navigate('/login')}>
+                Начать использовать
+              </button>
             </div>
             <div className="benefits-right">
               <div className="benefit-item">
@@ -231,7 +243,10 @@ function App() {
           <div className="section-label">Регистрация</div>
           <h2>Для использования системы необходимо <br/>зарегистрироваться</h2>
           <p>Заполните все необходимые поля</p>
-          <form className="registration-form">
+          <form className="registration-form" onSubmit={(e) => {
+            e.preventDefault();
+            navigate('/register');
+          }}>
             <div className="form-row">
               <div className="input-wrapper">
                 <div className="input-icon fio"></div>
@@ -246,7 +261,12 @@ function App() {
                 <input type="tel" placeholder="Тел" />
               </div>
             </div>
-            <button type="submit" className="btn-primary">Зарегистрироваться</button>
+            <button
+              className="btn-primary" 
+              type="button" 
+              onClick={() => navigate('/load-screen')}
+            >Зарегистрироваться
+            </button>
           </form>
         </div>
       </section>

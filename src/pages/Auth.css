@@ -1,0 +1,501 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7fbff;
+  font-family: 'Inter', sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.page-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Левая часть — картинка*/
+.image-side {
+  width: 70%;
+  background: url('https://img-webcalypt.ru/tools/meme-generator/104058.jpg') no-repeat center/cover;
+}
+
+/* Правая часть — форма*/
+.auth-container {
+  background: #fff;
+  min-width: 350px;
+  width: 30%;
+  height: 100vh;
+  box-sizing: border-box;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Основной блок формы */
+.form-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Верхний блок с заголовком и подзаголовком */
+.form-header {
+  width: 100%;
+  height: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Изменено с flex-start на center */
+  justify-content: center; /* Добавлено для вертикального центрирования */
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.form-title {
+  width: 100%;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center; /* Центрирование текста */
+  color: #30BACB;
+  margin: 0;
+}
+
+.form-subtitle {
+  width: 100%;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center; /* Центрирование текста */
+  color: #3B3D5E;
+  margin: 0;
+}
+
+/* Контейнер для всей формы */
+.form-fields-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px
+}
+
+/* Группа полей ввода */
+.inputs-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Группа полей */
+.fields-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Поле ввода с лейблом */
+.field-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.field-label {
+  width: 100%;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #3B3D5E;
+  margin: 0;
+}
+
+.field-input {
+  width: 100%;
+  height: 50px;
+  background: #E0EEFF;
+  border-radius: 12px;
+  border: none;
+  box-sizing: border-box;
+  padding: 0 16px;
+  font-family: 'Inter';
+  font-size: 14px;
+}
+
+.field-input:focus {
+  outline: 2px solid #30BACB;
+}
+
+.password-input-wrapper {
+  width: 100%;
+}
+
+/* Обёртка для ссылки */
+.link-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 4px; /* в сумме 12 (4 тут + 4 gap + мифическиая 4)*/
+}
+
+/* Ссылка */
+.link {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+  color: #69C3BF; 
+  cursor: pointer;
+  display: inline-block;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Кнопка */
+.button-group {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.register-btn {
+  width: 100%;
+  height: 45px;
+  background: linear-gradient(0deg, #69C3BF 0.48%, #30BACB 100%);
+  border-radius: 121px;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.register-btn:hover {
+  opacity: 0.9;
+}
+
+/* Нижняя часть */
+.form-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.divider-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 0px;
+  border: 1px solid #64B8EC;
+}
+
+.divider-text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  color: #3B3D5E;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.login-link-row {
+  width: 100%;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #3B3D5E;
+  margin-top: 18px;
+}
+
+.login-link {
+  color: #30BACB;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+.checkbox-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-input {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #30BACB;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+}
+
+.checkbox-input:checked {
+  background: #30BACB;
+  border-color: #30BACB;
+  position: relative;
+}
+
+.checkbox-input:checked::after {
+  content: '✔';
+  color: white;
+  font-size: 9.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-label {
+  font-family: 'Inter';
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
+  color: #3B3D5E;
+  cursor: pointer;
+  flex: 1;
+}
+
+/* Ссылка на политику конфиденциальности */
+.privacy-link {
+  color: #69C3BF;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.privacy-link:hover {
+  text-decoration: underline;
+}
+
+/* Контейнер для полей ввода кода */
+.code-inputs-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;        /* запрещаем перенос на новую строку */
+  align-items: center;
+  margin: 8px 0;
+  overflow-x: auto;          /* если не влезают – появляется горизонтальный скролл */
+  padding-bottom: 4px;       /* немного места для полосы прокрутки */
+  /* justify-content и gap управляются через инлайн-стили из JS */
+  padding: 2px;
+}
+
+/* Поле для ввода цифры кода - квадратное */
+.code-input {
+  width: 50px;
+  height: 50px;
+  background: #E0EEFF;
+  border-radius: 12px;
+  border: none;
+  box-sizing: border-box;
+  font-family: 'Inter';
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: #3B3D5E;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;           /* запрещаем сжатие */
+  flex-grow: 0;             /* запрещаем растяжение */
+}
+
+.code-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #30BACB;  /* имитация outline толщиной 2px */
+}
+
+/* Скрываем стрелки у числовых полей (для type=text они не нужны, но на всякий случай) */
+.code-input::-webkit-outer-spin-button,
+.code-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.code-input[type=text] {
+  -moz-appearance: textfield;
+}
+
+/* Опционально: стилизуем скролл, чтобы был незаметным */
+.code-inputs-wrapper::-webkit-scrollbar {
+  height: 4px;
+}
+
+.code-inputs-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(48, 186, 203, 0.3);
+  border-radius: 4px;
+}
+/* Таймер под полями кода */
+.timer-wrapper {
+  width: 100%;
+  text-align: center;
+  font-family: 'Inter';
+  font-size: 10px;
+  line-height: 12px;
+  color: #636363;
+  font-weight: 600
+}
+
+.timer-highlight {
+  color: #21C0D4;
+  font-weight: 700;
+}
+
+.resend-link {
+  color: #21C0D4;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.resend-link:hover {
+  text-decoration: underline;
+}
+
+/* Мобильные */
+@media (max-width: 768px) {
+  .image-side {
+    display: none;                     /* ← добавить (скрыть картинку) */
+  }
+
+  .auth-container {
+    width: 100%;                       /* ← добавить (форма на всю ширину) */
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+
+  .form-main {
+    justify-content: center;
+  }
+}
+
+/* Контейнер для поля с глазом */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Поле ввода пароля */
+.password-input {
+  width: 100%;
+  height: 50px;
+  background: #E0EEFF;
+  border-radius: 12px;
+  border: none;
+  box-sizing: border-box;
+  padding: 0 45px 0 16px; /* место для иконки справа */
+  font-family: 'Inter';
+  font-size: 14px;
+}
+
+/* Кнопка-глаз */
+.eye-button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.eye-button:focus {
+  outline: none;
+}
+
+/* Изображение глаза */
+.eye-image {
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.eye-button:hover .eye-image {
+  opacity: 1;
+}
+
+/* Активное состояние (пароль виден) */
+.eye-button-active .eye-image {
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(67%) sepia(14%) saturate(748%) hue-rotate(130deg) brightness(92%) contrast(86%);
+  /* Цвет 5CB0AC */
+}
+
+/* Убираем стандартные стили кнопки */
+.eye-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+}
