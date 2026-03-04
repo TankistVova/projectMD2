@@ -22,7 +22,7 @@ body, html {
 /* Левая часть — картинка*/
 .image-side {
   width: 70%;
-  background: url('https://img-webcalypt.ru/tools/meme-generator/104058.jpg') no-repeat center/cover;
+  background: url('/src/asset/auth.png') no-repeat center/cover;
 }
 
 /* Правая часть — форма*/

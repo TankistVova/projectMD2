@@ -9,10 +9,12 @@ const Register = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     login: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
   });
   const [isChecked, setIsChecked] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -28,11 +30,18 @@ const Register = () => {
     setShowPassword(!showPassword);
   };
 
+  const toggleConfirmPassword = (e) => {
+    e.preventDefault();
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+
   const isFormValid = () => {
     return (
       formData.fullName.trim() !== '' &&
       formData.login.trim() !== '' &&
       formData.password.trim() !== '' &&
+      formData.confirmPassword.trim() !== '' &&
+      formData.password === formData.confirmPassword &&
       isChecked
     );
   };
@@ -40,8 +49,19 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isFormValid()) {
-      console.log('Регистрация:', formData);
+      console.log('Регистрация:', {
+        fullName: formData.fullName,
+        login: formData.login,
+        // обычно пароли не логируем в реальном приложении
+      });
       navigate('/welcome');
+    } else {
+      // Небольшая подсказка — можно убрать или заменить на UI-ошибки
+      if (formData.password !== formData.confirmPassword) {
+        alert('Пароли не совпадают');
+      } else {
+        alert('Заполните все поля и согласитесь с политикой конфиденциальности');
+      }
     }
   };
 
@@ -102,6 +122,29 @@ const Register = () => {
                         className={`eye-button ${showPassword ? 'eye-button-active' : ''}`}
                         onClick={togglePassword}
                         aria-label={showPassword ? "Скрыть пароль" : "Показать пароль"}
+                      >
+                        <img src={eyeIcon} alt="" className="eye-image" />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Поле Подтверждение пароля с глазом */}
+                  <div className="field-wrapper">
+                    <label className="field-label">Подтвердите пароль</label>
+                    <div className="password-wrapper">
+                      <input 
+                        type={showConfirmPassword ? "text" : "password"}
+                        name="confirmPassword"
+                        value={formData.confirmPassword}
+                        onChange={handleInputChange}
+                        className="field-input password-input" 
+                        required
+                      />
+                      <button 
+                        type="button"
+                        className={`eye-button ${showConfirmPassword ? 'eye-button-active' : ''}`}
+                        onClick={toggleConfirmPassword}
+                        aria-label={showConfirmPassword ? "Скрыть пароль" : "Показать пароль"}
                       >
                         <img src={eyeIcon} alt="" className="eye-image" />
                       </button>
