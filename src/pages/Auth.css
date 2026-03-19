@@ -374,6 +374,7 @@ body, html {
 
 .code-input[type=text] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 /* Опционально: стилизуем скролл, чтобы был незаметным */
