@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
-import eyeIcon from '../asset/icons/eye.png'; // путь к вашей иконке
+import eyeIcon from '../asset/icons/eye.png';
 
 const ResetPassword = () => {
   const navigate = useNavigate();
